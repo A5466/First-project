@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>الامتحانات - Study Easy</title>
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: 'Arial', sans-serif;
+      direction: rtl;
+      margin: 0;
+      padding: 0 20px 40px;
+    }
+
+    .top-bar {
+      background-color: #007bff;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center; /* تم التعديل هنا */
+      flex-direction: row-reverse;
+      position: relative; /* لإتاحة وضع السهم بشكل مطلق */
+    }
+
+    .back-arrow {
+      font-size: 24px;
+      color: white;
+      text-decoration: none;
+      position: absolute;
+      left: 20px; /* السهم على اليسار */
+      cursor: pointer;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .page-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .search-box {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .search-box input {
+      padding: 10px 14px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      width: 250px;
+    }
+
+    .exam-cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      width: 220px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background-color: #f0f0f0;
+    }
+
+    .emoji {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .subject {
+      font-size: 18px;
+      color: #007bff;
+      margin-bottom: 5px;
+    }
+
+    .teacher {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الشريط العلوي -->
+  <div class="top-bar">
+    <a class="back-arrow" href="content.html" title="الرجوع للصفحة الرئيسية">←</a>
+    <div class="page-title">📄 امتحانات المواد</div>
+  </div>
+
+  <!-- صندوق البحث -->
+  <div class="search-box">
+    <input type="text" placeholder="ابحث عن امتحان..." />
+  </div>
+
+  <!-- كروت الامتحانات -->
+  <div class="exam-cards">
+    <!-- كرت امتحان الدراسات -->
+    <a class="card" href="https://drive.google.com/file/d/1iqiUU5hQaZoiuZNHrvTMlY4Uus2Iy-Ns/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+      <div class="emoji">🧭</div>
+      <div class="subject">امتحان الدراسات</div>
+      <div class="teacher">مستر عطى زكي شحتوه</div>
+    </a>
+
+    <!-- كرت امتحان العلوم -->
+    <a class="card" href="https://drive.google.com/file/d/1jCjcIShtvYW-3DQ0nThD5aB8B1M2Dsdc/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+      <div class="emoji">🧪</div>
+      <div class="subject">امتحان Science</div>
+      <div class="teacher">مستر Ahmed Elbasha</div>
+    </a>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Study Easy - الصفحة الرئيسية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      direction: rtl;
+      padding: 0;
+      margin: 0;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .title {
+      margin: 0 auto;
+      position: absolute;
+      right: 0;
+      left: 0;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .burger {
+      font-size: 26px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .menu a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .menu a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .show {
+      display: block;
+    }
+
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 40px;
+    }
+
+    .option {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 200px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+    }
+
+    .option:hover {
+      transform: scale(1.05);
+      background-color: #f1f1f1;
+    }
+
+    .emoji {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .chat-box {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 60px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: right;
+    }
+
+    .chat-output {
+      height: 150px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #fafafa;
+    }
+
+    #user-input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .send-button {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .send-button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="burger" onclick="toggleMenu()">☰</div>
+    <div class="title">📚 اختر نوع المحتوى اللي تحب تذاكر منه</div>
+    <div class="menu" id="menu">
+      <a href="community.html">مجتمع Study Easy</a>
+    </div>
+  </header>
+
+  <div class="options">
+    <a href="videos.html" class="option">
+      <div class="emoji">🎥</div>
+      فيديوهات
+    </a>
+
+    <a href="summaries.html" class="option">
+      <div class="emoji">📝</div>
+      ملخصات
+    </a>
+
+    <a href="exams.html" class="option">
+      <div class="emoji">📄</div>
+      امتحانات
+    </a>
+
+    <a href="schedule.html" class="option">
+      <div class="emoji">📆</div>
+      جدول المذاكرة
+    </a>
+  </div>
+
+  <div class="chat-box">
+    <h3>اسأل Study AI 🤖</h3>
+    <div id="chat-output" class="chat-output"></div>
+    <input type="text" id="user-input" placeholder="اكتب سؤالك هنا..." />
+    <button class="send-button" onclick="sendMessage()">إرسال</button>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+
+    function sendMessage() {
+      const input = document.getElementById("user-input").value;
+      const output = document.getElementById("chat-output");
+
+      if (input.trim() === "") return;
+
+      output.innerHTML += `<div><strong>أنت:</strong> ${input}</div>`;
+      output.innerHTML += `<div><strong>Study AI:</strong> شكراً على سؤالك! سيتم الرد قريبًا 😊</div>`;
+      document.getElementById("user-input").value = "";
+    }
+  </script>
+
+</body>
+</html>
